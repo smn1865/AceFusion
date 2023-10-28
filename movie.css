@@ -24,26 +24,43 @@ h1{
 }
 
 
-.search {
-    margin: 3rem;
-    margin-left: 12rem;
-    background-color: transparent;
-    border: 2px solid #e9e9ec;
-    border-radius: 50px;
-    color: #fff;
-    font-family: inherit;
-    font-size: 1rem;
-    padding: 0.5rem 1rem;
+.box {
+    position: absolute;
+    height: 40px;
+    right: 20%;
+    top: 25px;
+    display: flex;
+    cursor: pointer;
+    padding: 10px 40px;
+    background: transparent;
+    border-radius: 30px;
+    align-items: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    color: white;
+    transition: color 0.3s;
 }
 
-.search::placeholder {
-    color: #7378c5;
+.box:hover {
+    background: white;
+    color: black;
 }
 
-.search:focus {
-    background-color: #050505;
+.box:active {
+    background: white;
+    color: black;
+}
+
+.box input {
     outline: none;
+    border: none;
+    background: transparent;
 }
+
+.box a .fas {
+    font-size: 18px;
+}
+
+
 
 div{
     display: flex;
@@ -51,7 +68,7 @@ div{
 }
 
 .movie {
-    background-color: #373b69;
+    background-color: #363636;
     border-radius: 3px;
     box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
     overflow: hidden;
@@ -59,7 +76,7 @@ div{
     margin: 1rem;
     justify-content: center;
     align-content: center;
-    width: 265px;
+    width: 205px;
 }
 
 .movie img {
@@ -81,7 +98,7 @@ div{
 }
 
 .movie-info span {
-    background-color: #22254b;
+    background-color: transparent;
     border-radius: 3px;
     font-weight: bold;
     padding: 0.25rem 0.8rem;
@@ -100,21 +117,26 @@ div{
 }
 
 .overview {
-    background-color: #fff;
-    padding: 2rem;
+    background-color: #333; /* Darker background color for better contrast */
+    color: #fff; /* White text color for readability */
+    padding: 1.5rem; /* Adjusted padding for a balanced layout */
     position: absolute;
     max-height: 100%;
     overflow: auto;
     left: 0;
     bottom: 0;
     right: 0;
-    transform: translateY(101%);
-    transition: transform 0.3s ease-in;
+    transform: translateY(100%); /* Start offscreen */
+    transition: transform 0.3s ease-in-out; /* Smooth transform transition */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Subtle box shadow for depth */
 }
 
 .overview h3 {
     margin-top: 0;
+    font-size: 1.5rem; /* Increased font size for emphasis */
+    margin-bottom: 1rem; /* Added bottom margin for spacing */
 }
+
 
 .movie:hover .overview {
     transform: translateY(0);
