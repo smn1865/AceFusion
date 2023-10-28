@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://kit.fontawesome.com/0f4ee7107b.js" crossorigin="anonymous"></script>
+  <title>Loader</title> 
+  <style>
+body {
+  overflow-y: none;
+}
+  </style>
+</head>
+
+<body style="background: #111; text-align: center; overflow: none; color: white; height: 100vh;">
+  
+  <iframe id="frame" style="border: none; position: absolute; top: 0; right: 0; bottom: 0; left: 0; height: 100vh; width: 100vw; margin: 0; padding: 0;"></iframe>
+  
+  <script>
+    const params = new URLSearchParams(window.location.search)
+    if (params.get("id")) {
+        document.querySelector("#frame").src = `https://vidsrc.me/embed/movie?tmdb=${params.get("id")}`;
+    }
+  </script>
+</body>
+
+</html>
